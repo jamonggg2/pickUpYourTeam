@@ -11,7 +11,7 @@ function App({ props }) {
           {/* <Route path="/*"><WarningPage /></Route> */}
         </Routes>
       </BrowserRouter>
-      <footer className='bg-neutral-200 text-center dark:bg-neutral-700 lg:text-left font-sans'>made by 해탱</footer>
+      <footer className='bg-neutral-200 text-center dark:bg-neutral-700 lg:text-left font-sans' style={{fontFamily:'neodgm'}}>made by 해탱</footer>
     </div>
   );
 }
