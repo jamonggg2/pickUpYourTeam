@@ -3,6 +3,8 @@ import Parser from 'html-react-parser';
 import { useLocation } from 'react-router-dom';
 import '../fonts/font.css';
 import Footer from './Footer';
+import StartBtn from './StartBtn';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function EndPage(){
@@ -13,6 +15,14 @@ export default function EndPage(){
 
     const result = teamContent.find((item) => item.type === maxValTeam);
     const bg = result.color; 
+
+    const navigate = useNavigate();
+
+    //처음으로 돌아가기
+    const onClickStartBtn = () =>{
+        navigate('/');
+    }
+
     return(
         <div className='justify-center items-center min-h-[100vh]' style={{background : bg}}>
             <div className='h-[50px]'/>
@@ -27,9 +37,12 @@ export default function EndPage(){
                 <div className="grid h-auto bg-white card rounded-md m-10 p-[30px] place-items-center" style={{ fontFamily: 'neodgm' }}>
                 {Parser(result.description)}
                 </div> 
-                <div className="grid h-auto bg-white card rounded-md m-10 mb-[150px] p-[30px] place-items-center" style={{ fontFamily: 'neodgm' }}>
+                <div className="grid h-auto bg-white card rounded-md m-10 mb-[100px] p-[30px] place-items-center" style={{ fontFamily: 'neodgm' }}>
                 {Parser(result.subdesc)}
                 </div> 
+            </div>
+            <div className='flex justify-center items-center mb-[50px]'>
+                <StartBtn text={"처음부터 다시하기"} onClick={onClickStartBtn} />
             </div>
             <Footer/>
         </div>
