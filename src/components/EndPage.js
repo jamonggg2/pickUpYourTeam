@@ -5,6 +5,7 @@ import '../fonts/font.css';
 import Footer from './Footer';
 import StartBtn from './StartBtn';
 import { useNavigate } from 'react-router-dom';
+import { TwitterShareButton, TwitterIcon } from 'react-share';
 
 
 export default function EndPage(){
@@ -41,8 +42,17 @@ export default function EndPage(){
                 {Parser(result.subdesc)}
                 </div> 
             </div>
+            <div className='flex justify-center items-center mb-[10px]'>
+                <TwitterShareButton
+                  url={window.location.href}
+                title={'올해 내가 응원하기 좋은팀은...'+result.name}
+                >
+                  <TwitterIcon size={50} round />
+                </TwitterShareButton>
+
+            </div>
             <div className='flex justify-center items-center mb-[50px]'>
-                <StartBtn text={"처음부터 다시하기"} onClick={onClickStartBtn} />
+            <StartBtn text={"처음부터 다시하기"} onClick={onClickStartBtn} />
             </div>
             <Footer/>
         </div>
