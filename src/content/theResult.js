@@ -37,7 +37,7 @@ const results = [
     },
     {//4
         'type': 'af',
-        'color': '#005BA9',
+        'color': '#FD4B7C',
         'title': '프랑스 남자를 좋아하시나요? <br/>BWT Alpine F1 Team',
         'name': '알핀',
         'img': require('../image/af.jpeg'),
