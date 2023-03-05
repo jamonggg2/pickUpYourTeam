@@ -1,17 +1,19 @@
 import './App.css';
 import { BrowserRouter , Route, Routes} from 'react-router-dom';
 import StartPage from './components/StartPage';
+import QuestionPage from './components/QuestionPage';
+import EndPage from './components/EndPage';
 
 function App({ props }) {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<StartPage props={props}/>}  exact />
-          {/* <Route path="/*"><WarningPage /></Route> */}
+          <Route path="*" element={<StartPage props={props}/>}  exact />
+          <Route path="/questionPage" element={<QuestionPage props={props}/>}  exact />
+          <Route path="/endPage" element={<EndPage props={props}/>}  exact />
         </Routes>
       </BrowserRouter>
-      <footer className='bg-neutral-200 text-center dark:bg-neutral-700 lg:text-left font-sans' style={{fontFamily:'neodgm'}}>made by 해탱</footer>
     </div>
   );
 }
